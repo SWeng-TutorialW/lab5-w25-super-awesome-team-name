@@ -5,10 +5,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.TextField?>
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.PrimaryController">
    <children>
-      <Label text="Welcome" />
-      <Button mnemonicParsing="false" onAction="#sendWarning" text="Send me a warning!" />
+      <Label text="Welcome to X and O game" />
+      <Button text="Start" onAction="#startClient" />
+      <Label text="please wait for the second player" fx:id="waitingLabel" visible="false" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
