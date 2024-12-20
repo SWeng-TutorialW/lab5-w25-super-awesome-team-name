@@ -231,7 +231,7 @@ public class ObservableServer extends Observable
    * @param exception the exception raised.
    */
   protected synchronized void clientException(ConnectionToClient client,
-                                        Throwable exception)
+                                              Throwable exception)
   {
     setChanged();
     notifyObservers(CLIENT_EXCEPTION);
@@ -301,9 +301,9 @@ public class ObservableServer extends Observable
    * @see com.lloseng.ocsf.server.ObservableOriginatorServer
    */
   protected synchronized void handleMessageFromClient
-    (Object message, ConnectionToClient client)
+  (Object message, ConnectionToClient client)
   {
-     setChanged();
-     notifyObservers(message);
+    setChanged();
+    notifyObservers(message);
   }
 }

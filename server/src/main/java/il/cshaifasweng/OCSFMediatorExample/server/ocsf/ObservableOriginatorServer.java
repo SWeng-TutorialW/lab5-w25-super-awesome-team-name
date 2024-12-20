@@ -5,22 +5,22 @@
 package il.cshaifasweng.OCSFMediatorExample.server.ocsf;
 
 /**
-* The <code> ObservableOriginatorServer </code> is a subclass
-* of <code> ObservableServer </code> that sends
-* <code> OriginatorMessage </code> instances to its observers.
-* This class should be used when the observers need to know
-* the orginator of the messages received. The originator
-* is null when the message sent concerns the server.
-*
-* Project Name: OCSF (Object Client-Server Framework)<p>
-*
-* @author Dr Robert Lagani&egrave;re
-* @author Dr Timothy C. Lethbridge
-* @author Fran&ccedil;ois B&eacute;langer
-* @author Paul Holden
-* @version February 2001 (2.12)
-* @see com.lloseng.ocsf.server.OriginatorMessage
-*/
+ * The <code> ObservableOriginatorServer </code> is a subclass
+ * of <code> ObservableServer </code> that sends
+ * <code> OriginatorMessage </code> instances to its observers.
+ * This class should be used when the observers need to know
+ * the orginator of the messages received. The originator
+ * is null when the message sent concerns the server.
+ *
+ * Project Name: OCSF (Object Client-Server Framework)<p>
+ *
+ * @author Dr Robert Lagani&egrave;re
+ * @author Dr Timothy C. Lethbridge
+ * @author Fran&ccedil;ois B&eacute;langer
+ * @author Paul Holden
+ * @version February 2001 (2.12)
+ * @see com.lloseng.ocsf.server.OriginatorMessage
+ */
 public class ObservableOriginatorServer extends ObservableServer
 {
   // Constructor ******************************************************
@@ -47,7 +47,7 @@ public class ObservableOriginatorServer extends ObservableServer
    * @param client The connection to the client.
    */
   protected synchronized void handleMessageFromClient
-    (Object message, ConnectionToClient client)
+  (Object message, ConnectionToClient client)
   {
     setChanged();
     notifyObservers(new OriginatorMessage(client, message));
@@ -97,12 +97,12 @@ public class ObservableOriginatorServer extends ObservableServer
    * @param Throwable the exception thrown.
    */
   synchronized protected void clientException(
-    ConnectionToClient client, Throwable exception)
+          ConnectionToClient client, Throwable exception)
   {
     setChanged();
     notifyObservers(
-      new OriginatorMessage(client,
-        CLIENT_EXCEPTION + exception.getMessage()));
+            new OriginatorMessage(client,
+                    CLIENT_EXCEPTION + exception.getMessage()));
   }
 
   /**
@@ -120,8 +120,8 @@ public class ObservableOriginatorServer extends ObservableServer
   {
     setChanged();
     notifyObservers(
-      new OriginatorMessage(null,
-        LISTENING_EXCEPTION + exception.getMessage()));
+            new OriginatorMessage(null,
+                    LISTENING_EXCEPTION + exception.getMessage()));
   }
 
   /**
